@@ -1,0 +1,26 @@
+DESCRIPCIÓN DEL DATASET
+
+¿Qué información contiene?
+
+Es el registro transaccional de un minorista británico sin tienda física que vende en línea, principalmente artículos de regalo y cuyos clientes son principalmente mayoristas. Cubre del 01/12/2010 al 09/12/2011. 
+Cada fila es una línea de factura
+(un producto dentro de un proceso de compra) y contiene 8 campos: 
+número de factura: (InvoiceNo) 
+código y descripción del producto: (StockCode, Description)
+cantidad: (Quantity)
+precio unitario en libras esterlinas: (UnitPrice)
+fecha y hora: (InvoiceDate)
+identificador del cliente: (CustomerID) 
+país: (Country) 
+Tras la limpieza quedan 522,540 líneas, que corresponden a 19,773 facturas, 3,908 productos, 4,334 clientes identificados y 38 países.
+
+¿Cómo puede describirse?
+Es un dataset transaccional, multivariado y con componente temporal. Registra qué se compra, en qué cantidad, a qué precio, cuándo, dónde y, en la mayoría de los casos, quién lo compra. 
+Sus rasgos principales son:
+- Predominan las líneas de pocas unidades de artículos baratos. La mediana es de 4 unidades y de £2.08 por unidad, y el 75 % de las líneas tiene 12 unidades o menos. Existen unas poc líneas con cantidades extremas (máximo 80,995) generan una distribución fuertemente asimétrica, podría atribuirse a la presencia de clientes mayoristas como indica la documentación del dataset.
+- El número de ventas por mes crece de septiembre a noviembre de 2011, lo que es compatible con la temporada previa a Navidad. Como se cubre un solo año, los datos no permiten confirmar que el patrón se repita.
+- Reino Unido concentra el 91.64 % de las líneas.
+- El 25.14 % de las líneas no tiene cliente asociado, aunque la documentación original indicaba que no hhabía valores faltantes.
+
+¿Qué permite analizar?
+La evolución de las ventas en el tiempo, el desempeño de los productos, la distribución geográfica de los clientes y su comportamiento de compra.
