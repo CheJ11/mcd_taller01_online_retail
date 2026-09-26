@@ -25,10 +25,15 @@ n = len(df)
 df = df.drop_duplicates()
 print(f"[1] Duplicados exactos eliminados:         {n - len(df):>7,}")
 
-# [2] Cancelaciones: InvoiceNo con prefijo 'C'
+# [2] Cancelaciones: InvoiceNo con prefijo 'C'.
 n = len(df)
 df = df[~df["InvoiceNo"].str.startswith("C")]
 print(f"[2] Cancelaciones eliminadas:              {n - len(df):>7,}")
+
+# [2b] Pedidos anulados
+n = len(df)
+df = df[~df["InvoiceNo"].isin(["541431", "581483"])]
+print(f"[2b] Pedidos anulados:        {n - len(df):>7,}")
 
 # [3] Cantidad o precio no positivos
 n = len(df)
